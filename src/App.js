@@ -21,11 +21,14 @@ const App = () => {
     <div className="App">
       <header className="App-header">
        <div className="container">
-       <input
-        onChange={(e) => setPokemon(e.target.value.toLowerCase())}
-        placeholder="Insert Pokemon name"/>
-       <button type="submit" onClick={handleClick}>Search</button>
-       </div>
+        <h1>Welcome to Pokedex!</h1>
+        <div className="form-group">
+          <input
+            onChange={(e) => setPokemon(e.target.value.toLowerCase())}
+            placeholder="Type a pokemon"/>
+          <button type="submit" onClick={handleClick}>Search</button>
+          </div>
+        </div>
       </header>
     </div>
   );
