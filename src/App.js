@@ -7,6 +7,7 @@ import api from './services/api'
 
 const App = () => {
   const [pokemon, setPokemon] = useState('');
+  const [error, setError] = useState('');
 
   const handleClick = async () => {
     try{
@@ -14,6 +15,7 @@ const App = () => {
       console.log(response.data);
     }catch(error){
       console.log(error.message);
+      setError(error.message);
     }
   }
 
@@ -27,6 +29,7 @@ const App = () => {
             onChange={(e) => setPokemon(e.target.value.toLowerCase())}
             placeholder="Type a pokemon"/>
           <button type="submit" onClick={handleClick}>Search</button>
+            {error && <p>{error}</p>}
           </div>
         </div>
       </header>
