@@ -11,7 +11,9 @@
     border-radius: 2vh;
 }
 .miniPostCards .bodyContent{
-    padding: 2vh;
+    padding: 10vh;
+    padding-left: 15vh;
+    padding-right: 15vh;
     font-size: 3vh;
 }
 .miniPostCards .bodyContent .pokemonTitle{
