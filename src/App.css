@@ -16,7 +16,7 @@
 }
 
 .App-header {
-  background-color: #302e2b;
+  background-image: url('./Assets/background.jpg');
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,6 +24,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
   font-family: 'Roboto', sans-serif;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .App-link {
