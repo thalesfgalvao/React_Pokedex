@@ -1,0 +1,14 @@
+.miniPostCards .cardBody{
+    background-color: rgba(170, 170, 170, 0.287);
+    align-items: center;
+    align-content: center;
+    margin-top: 10vh;
+    border-radius: 2vh;
+}
+.miniPostCards .bodyContent{
+    padding: 2vh;
+    font-size: 3vh;
+}
+.miniPostCards .bodyContent .pokemonTitle{
+    margin-top: 5vh;
+}
