@@ -6,7 +6,7 @@ const MiniPostCards = ({pokemonName, pokemonImage}) => {
     
     return(
         <div className="miniPostCards">
-            <div className="cardBody" style={{ width: '18rem' }}>
+            <div className="cardBody">
                 <div className="bodyContent">
                     <div className="pokemonTitle">
                         <p>{capitalizeFirstLetter(pokemonName)}</p>

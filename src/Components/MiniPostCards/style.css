@@ -5,10 +5,13 @@
     margin-left: 10vh;
 }
 .miniPostCards .cardBody{
-    background-color: rgba(255,255,255,0.3);
-    backdrop-filter: blur(7px);
-    margin-top: 10vh;
-    border-radius: 2vh;
+    position: flex;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    backdrop-filter: blur(3px);
 }
 .miniPostCards .bodyContent{
     padding: 10vh;

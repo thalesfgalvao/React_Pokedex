@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import MiniPostCards from './Components/MiniPostCards';
 import api from './services/api';
+import Balls from './Components/Balls/Balls';
 
 const App = () => {
   const [typedPokemon, setTypedPokemon] = useState('');
@@ -27,6 +28,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
+        <Balls/>
        <div className="container">
         <h1>Welcome to Pokedex!</h1>
         <div className="form-group">
@@ -38,7 +40,6 @@ const App = () => {
           </div>
           {pokemon && <MiniPostCards pokemonName={pokemon.name} pokemonImage={pokemon.sprites.front_default}/>}
         </div>
-      
       </header>
     </div>
   );
