@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Home } from '../pages/Home';
 import { PostCardsPage } from '../pages/PostCardsPage';
-import { Balls } from '../components/Balls';
+import { Balls } from '../Components/Balls';
 
 export const Routes = () => {
     return(

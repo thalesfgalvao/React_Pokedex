@@ -1,8 +1,8 @@
 import React from 'react';
 import api from '../../services/api';
 import { useState } from 'react';
-import { Balls } from '../../components/Balls';
-import { MiniPostCards } from '../../components/MiniPostCards';
+import { Balls } from '../../Components/Balls';
+import { MiniPostCards } from '../../Components/MiniPostCards';
 import { WelcomeText, InputSearch, ButtonSearch} from './styled.js';
 import './style.css';
 

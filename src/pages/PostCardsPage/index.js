@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from 'react-router-dom';
-import { PostCards } from "../../components/PostCards";
+import { PostCards } from "../../Components/PostCards";
 
 export const PostCardsPage = () =>{
 
