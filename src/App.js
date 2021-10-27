@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
-import { Home } from './pages/Home';
-import { Routes } from './routes';
+import { Routes } from './routes/Routes';
+import GlobalStyles from './styles/global';
 
-export const App = () => {
-  return(
+const App = () => {
+  return (
     <>
-      <Home/>
+      <GlobalStyles/>
       <Routes/>
     </>
   );
 }
+export default App;

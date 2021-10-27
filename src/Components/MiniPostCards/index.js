@@ -1,27 +1,17 @@
 import React from 'react';
+import { capitalizeFirstLetter } from '../../utils/capitalizedFirstLetter';
 import { Link } from 'react-router-dom';
-import './style.css';
-import {capitalizeFirstLetter} from '../../Utils/capitalizeFirstLetter';
+import { MiniPostCardsBody, PokemonTitle, PokemonSprite} from './styled.js';
 
-const MiniPostCards = ({pokemonName, pokemonImage}) => {
-  
-    
+export const MiniPostCards = ({pokemonName, pokemonImage}) => {
     return(
         <Link to={`/PostCardsPage/${pokemonName}`}>
-            <div className="miniPostCards">
-                <div className="cardBody">
-                    <div className="bodyContent">
-                        <div className="pokemonTitle">
-                            <p>{capitalizeFirstLetter(pokemonName)}</p>
-                        </div>
-                        <div className="pokemonSprite">
-                            <img className="pokemonImage" src={pokemonImage} alt="Pokemon_Image"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <MiniPostCardsBody>
+                <PokemonTitle>
+                    {capitalizeFirstLetter(pokemonName)}
+                </PokemonTitle>
+                <PokemonSprite src={pokemonImage}/>
+            </MiniPostCardsBody>
         </Link>
     );
 }
-
-export default MiniPostCards;

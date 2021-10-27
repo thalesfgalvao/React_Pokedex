@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-
 .App {
   text-align: center;
 }
@@ -16,17 +14,13 @@
 }
 
 .App-header {
-  background-color: #242424;
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  font-family: 'Roboto', sans-serif;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
 }
 
 .App-link {
@@ -40,32 +34,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-.container{
-  margin-top: 2vh;
-}
-h1{
-  font-size: 7vh;
-  font-weight: bold;
-}
-.form-group{
-  margin-top: 5vh;
-}
-input{
-  border-radius: 2vh 0vh 0vh 2vh;
-  padding: 1vh;
-  border: 1px;
-  font-size: 2vh;
-  padding-right: 15vh;
-  padding-left: 2vh;
-}
-button{
-  border-radius: 0px 10px 10px 0px;
-  padding: 1vh;
-  border: 1px;
-  font-size: 2vh;
-  padding-left: 6vh;
-  padding-right: 6vh;
-  background-color: rgb(243, 75, 75);
-  color: #FFFFFF; 
 }

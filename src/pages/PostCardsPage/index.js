@@ -1,10 +1,12 @@
 import React from "react";
-import { PostCards } from "../../Components/PostCards/index";
+import { useParams } from 'react-router-dom';
+import { PostCards } from "../../components/PostCards";
 
 export const PostCardsPage = () =>{
+
+    const {pokemonName, pokemonImage} = useParams();
+    
     return(
-        <div>
-            <PostCards/>
-        </div>
+        <PostCards pokemonName={pokemonName} pokemonImage={`${pokemonImage}`}/>
     );
 }
