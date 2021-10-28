@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Balls } from '../Balls';
-import api from '../../services/api';
 import { capitalizeFirstLetter } from '../../utils/capitalizedFirstLetter';
+import { Row, Col } from 'react-bootstrap';
+import * as S from './styled'
+import api from '../../services/api';
 
-export const PostCards = ({pokemonName, pokemonImage}) => {
+export const PostCards = ({pokemonName}) => {
 
     const [pokemon, setPokemon] = useState('');
 
     const fetchPokemon = async() =>{
         try{
             const response = await api.get(`/pokemon/${pokemonName}`);
-            console.log(response.data);
+            console.log(response.data.types[0]);
             setPokemon(response.data);
         }catch(error){
             console.log(error.message);
@@ -22,24 +24,35 @@ export const PostCards = ({pokemonName, pokemonImage}) => {
     },[]);
 
     return(
-        <div className="App">
-            <header className="App-header">
-                <Balls/>
-                <div className="PostCards">
-                    <div className="cardBody">
-                        <div className="pokemonTitle">
-                            <h1>{capitalizeFirstLetter(`${pokemon.name}`)}</h1>
-                        </div>
-                        <div className="pokemonImage">
-                            <img className="pokemonImage" src={pokemon.sprites.front_default} alt="Pokemon_Image"/>
-                        </div>
-                        <div className="bodyContent">
-                            <p>ID {pokemon.id} Height: {pokemon.height}'</p>
-                            <p>Weight: {pokemon.weight}kg Type: {pokemon.type}</p>
-                        </div>
-                    </div>
-                </div>
-            </header>
-        </div>
+        <>
+        {pokemon ? (<>
+            <Balls/>
+            <S.PostCardsBody>
+                <S.PokemonTitle>
+                    {capitalizeFirstLetter(pokemon.name)}
+                </S.PokemonTitle>
+                    <S.PokemonSprite src={pokemon.sprites.front_default}/>
+                <S.BodyContent>
+                    <Row>
+                        <Col md={6}>
+                            <S.PokeInfo>ID {pokemon.id}</S.PokeInfo>
+                        </Col>
+                        <Col md={6}>
+                            <S.PokeInfo> Height: {pokemon.height}</S.PokeInfo>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={6}>
+                            <S.PokeInfo>Weight: {pokemon.weight}kg</S.PokeInfo>
+                        </Col>
+                        <Col md={6}>
+                            <S.PokeInfo>Type: {capitalizeFirstLetter(pokemon.types[0].type.name)}</S.PokeInfo>
+                        </Col>
+                    </Row>
+                </S.BodyContent>
+            </S.PostCardsBody>
+        </>) : <p>Loagin...</p>}
+            
+        </>
     );
 }

@@ -3,8 +3,7 @@ import api from '../../services/api';
 import { useState } from 'react';
 import { Balls } from '../../Components/Balls';
 import { MiniPostCards } from '../../Components/MiniPostCards';
-import { WelcomeText, InputSearch, ButtonSearch} from './styled.js';
-import './style.css';
+import * as S from './styled.js';
 
 export const Home = () => {
     const [typedPokemon, setTypedPokemon] = useState('');
@@ -16,10 +15,9 @@ export const Home = () => {
     setIsLoading(true);
     try{
       const response = await api.get(`/pokemon/${typedPokemon}`);
-      console.log(response.data);
-      setPokemon(response.data);
-      setIsLoading(false);
-
+          console.log(response.data);
+          setPokemon(response.data);
+          setIsLoading(false);
     }catch(error){
       console.log(error.message);
       setError(error.message);
@@ -28,21 +26,17 @@ export const Home = () => {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <>
       <Balls/>
-       <div className="container">
-        <WelcomeText>Welcome to Pokedex!</WelcomeText>
-        <div className="form-group">
-          <InputSearch
+      <S.Wrapper>
+        <S.WelcomeText>Welcome to Pokedex!</S.WelcomeText>
+          <S.InputSearch
             onChange={(e) => setTypedPokemon(e.target.value.toLowerCase())}
             placeholder="Type a pokemon"/>
-          <ButtonSearch onClick={handleClick}>{isLoading ? 'Loading...' : 'Search'}</ButtonSearch>
+          <S.ButtonSearch isLoadingButton={isLoading} onClick={handleClick}>{isLoading ? 'Loading...' : 'Search'}</S.ButtonSearch>
             {error && <p>{error}</p>}
-          </div>
           {pokemon && <MiniPostCards pokemonName={pokemon.name} pokemonImage={pokemon.sprites.front_default}/>}
-        </div>
-      </header>
-    </div>
+      </S.Wrapper>
+    </>
   );
 }
